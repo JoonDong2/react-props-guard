@@ -1,0 +1,65 @@
+{
+  "name": "@joondong2/react-props-guard",
+  "version": "0.1.0",
+  "description": "Higher-order components that render a fallback when specified props are missing",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/typescript/index.d.ts",
+      "import": "./lib/module/index.js",
+      "require": "./lib/commonjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build:module": "tsc -p tsconfig.module.json",
+    "build:commonjs": "tsc -p tsconfig.commonjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:pkg": "node scripts/write-pkg-json.js",
+    "build": "yarn clean && yarn build:module && yarn build:commonjs && yarn build:types && yarn build:pkg",
+    "prepare": "yarn build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "hoc",
+    "prop",
+    "guard",
+    "fallback"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoonDong2/react-props-guard.git"
+  },
+  "author": "Joondong <noreply@example.com> (https://github.com/JoonDong2)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoonDong2/react-props-guard/issues"
+  },
+  "homepage": "https://github.com/JoonDong2/react-props-guard#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "typescript": "^5.6.0"
+  },
+  "packageManager": "yarn@4.11.0"
+}

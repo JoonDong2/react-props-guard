@@ -1,0 +1,6 @@
+node_modules
+.github
+.vscode
+.idea
+*.log
+.DS_Store
