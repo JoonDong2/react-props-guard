@@ -74,7 +74,7 @@ function Detail({ user, post }: DetailProps) {
 
 const GuardedDetail = withPropsGuard(
   Detail,
-  ['user', 'post'] as const,
+  ['user', 'post'],
   <span>Loading…</span>,
 );
 
@@ -88,7 +88,7 @@ const GuardedDetail = withPropsGuard(
 ```tsx
 // These two are equivalent:
 withPropGuard(Profile, 'user', fallback);
-withPropsGuard(Profile, ['user'] as const, fallback);
+withPropsGuard(Profile, ['user'], fallback);
 ```
 
 > **Note:** `withPropsGuard` iterates the `keys` array on every render (short-circuiting on the first missing key). When guarding only one prop, `withPropGuard` avoids the loop overhead and expresses intent more clearly. Use `withPropsGuard` when you truly need to guard multiple props together.

@@ -1,6 +1,6 @@
 import type { ComponentType, ReactNode } from 'react';
 
-function withPropsGuard<K extends string, P extends { [Key in K]: unknown }>(
+function withPropsGuard<const K extends string, P extends { [Key in K]: unknown }>(
   WrappedComponent: ComponentType<P>,
   keys: readonly K[],
   fallback: ReactNode = null,
