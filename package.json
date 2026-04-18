@@ -1,6 +1,6 @@
 {
   "name": "@joondong2/react-props-guard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Higher-order components that render a fallback when specified props are missing",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
