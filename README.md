@@ -17,13 +17,13 @@ This library centralizes that pattern into a single HOC, and — importantly —
 ## Installation
 
 ```sh
-npm install @joondong2/react-props-guard
+npm install react-props-guard
 ```
 
 or
 
 ```sh
-yarn add @joondong2/react-props-guard
+yarn add react-props-guard
 ```
 
 ## API
@@ -33,7 +33,7 @@ yarn add @joondong2/react-props-guard
 Guards a **single** prop. Renders `fallback` when the specified prop is `undefined` or `null`; otherwise renders the wrapped component with its original prop types (the key is guaranteed to be defined).
 
 ```tsx
-import { withPropGuard } from '@joondong2/react-props-guard';
+import { withPropGuard } from 'react-props-guard';
 
 type ProfileProps = {
   user: { name: string };
@@ -55,7 +55,7 @@ const GuardedProfile = withPropGuard(Profile, 'user', <span>Loading…</span>);
 Guards **multiple** props at once. Internally iterates the `keys` array and renders `fallback` if **any** of them is `undefined` or `null`.
 
 ```tsx
-import { withPropsGuard } from '@joondong2/react-props-guard';
+import { withPropsGuard } from 'react-props-guard';
 
 type DetailProps = {
   user: { name: string };

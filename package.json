@@ -1,5 +1,5 @@
 {
-  "name": "@joondong2/react-props-guard",
+  "name": "react-props-guard",
   "version": "0.1.1",
   "description": "Higher-order components that render a fallback when specified props are missing",
   "main": "./lib/commonjs/index.js",
@@ -48,7 +48,7 @@
   "bugs": {
     "url": "https://github.com/JoonDong2/react-props-guard/issues"
   },
-  "homepage": "https://github.com/JoonDong2/react-props-guard#readme",
+  "homepage": "https://www.npmjs.com/package/react-props-guard",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"

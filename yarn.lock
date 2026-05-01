@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@joondong2/react-props-guard@workspace:.":
+"react-props-guard@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@joondong2/react-props-guard@workspace:."
+  resolution: "react-props-guard@workspace:."
   dependencies:
     "@types/react": "npm:^19.0.0"
     react: "npm:^19.0.0"
