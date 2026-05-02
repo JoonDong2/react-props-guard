@@ -5,18 +5,6 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"react-props-guard@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "react-props-guard@workspace:."
-  dependencies:
-    "@types/react": "npm:^19.0.0"
-    react: "npm:^19.0.0"
-    typescript: "npm:^5.6.0"
-  peerDependencies:
-    react: ">=17"
-  languageName: unknown
-  linkType: soft
-
 "@types/react@npm:^19.0.0":
   version: 19.2.14
   resolution: "@types/react@npm:19.2.14"
@@ -32,6 +20,18 @@ __metadata:
   checksum: 10c0/cd29c51e70fa822f1cecd8641a1445bed7063697469d35633b516e60fe8c1bde04b08f6c5b6022136bb669b64c63d4173af54864510fbb4ee23281801841a3ce
   languageName: node
   linkType: hard
+
+"react-props-guard@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "react-props-guard@workspace:."
+  dependencies:
+    "@types/react": "npm:^19.0.0"
+    react: "npm:^19.0.0"
+    typescript: "npm:^5.6.0"
+  peerDependencies:
+    react: ">=17"
+  languageName: unknown
+  linkType: soft
 
 "react@npm:^19.0.0":
   version: 19.2.5
