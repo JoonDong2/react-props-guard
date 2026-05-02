@@ -2,7 +2,8 @@ name: Publish to npm
 
 on:
   push:
-    branches: [main]
+    tags:
+      - 'v*'
 
 concurrency:
   group: publish-${{ github.ref }}
@@ -12,12 +13,11 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Enable Corepack
@@ -29,11 +29,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'yarn'
 
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
       - name: Install dependencies
         run: yarn install --immutable
 
@@ -43,14 +38,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Bump version
-        run: |
-          npm version patch -m "chore: bump version to %s"
-
       - name: Publish to npm
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Push version bump
-        run: git push --follow-tags
